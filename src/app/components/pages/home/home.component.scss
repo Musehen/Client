@@ -1,0 +1,51 @@
+@import '~styles.scss';
+
+@media #{$small-and-down} {.svg{
+  margin-left: 10px;
+  width: 80px !important;
+  vertical-align: middle;
+}
+
+
+  .small-svg {
+    margin-left: 10px;
+    width: 60px !important;
+    vertical-align: middle;
+  }
+}
+@media #{$medium-and-up} {
+  .svg{
+    margin-left: 10px;
+    width: 100px !important;
+    vertical-align: middle;
+  }
+
+
+  .small-svg {
+    margin-left: 10px;
+    width: 80px !important;
+    vertical-align: middle;
+  }
+}
+@media #{$large-and-up} {
+  .svg{
+    margin-left: 10px;
+    width: 150px !important;
+    vertical-align: middle;
+  }
+
+
+  .small-svg {
+    margin-left: 10px;
+    width: 120px !important;
+    vertical-align: middle;
+  }
+}
+
+.carousel-item{
+  background-color: $primary-color-light;
+}
+
+.carousel{
+  background-color: $primary-color;
+}

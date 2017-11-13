@@ -1,0 +1,21 @@
+@import '~styles.scss';
+
+.svg {
+  margin-left: 10px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+nav{
+  background-color: $primary-color;
+}
+
+@media #{$small-and-down} {.svg{
+  margin-left: 10px;
+  width: 25px !important;
+  vertical-align: middle;
+}
+}
+.tabs {
+  overflow-x: hidden;
+}

@@ -1,0 +1,36 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h5 class="center">Login</h5>
+        <form (ngSubmit)="onLoginSubmit()">
+          <div class="col s12 m8 l4 offset-m2 offset-l1">
+            <div class="row">
+              <div class="input-field">
+                <i class="material-icons">face</i> username
+                <input [(ngModel)]="username" name="username" id="username" type="text"
+                       class="validate autocomplete-content" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field">
+                <i class="material-icons">lock_outline</i> password
+                <input [(ngModel)]="password" name="password" id="password" type="password" class="validate" required>
+              </div>
+            </div>
+          </div>
+          <div class='row'>
+            <button type='submit' name='btn_login'
+                    class='col s12 m6 offset-m2 l4 offset-l4 waves-effect waves-light btn-large'>
+              login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="center">
+    New here? <a [routerLink]="['/register']">register now</a>
+  </div>
+</div>
+

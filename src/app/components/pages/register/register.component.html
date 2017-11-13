@@ -1,0 +1,100 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h5 class="center">Register</h5>
+        <form (ngSubmit)="onRegisterSubmit()">
+          <div class="row">
+            <div class="col s12 m8 l4 offset-l1 offset-m2">
+              <div class="row">
+                <div class="input-field">
+                  <i class="material-icons">face</i> username <span class="blue-text"> *</span>
+                  <input [(ngModel)]="username" id="register-username" type="text" class="validate" name="username"
+                         required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field">
+                  <i class="material-icons">email</i> email <span class="blue-text"> *</span>
+                  <input [(ngModel)]="email" id="register-email" type="email" class="validate" name="email" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field">
+                  <i class="material-icons">short_text</i>first name<span class="blue-text"> *</span>
+                  <input [(ngModel)]="firstName" id="register-firstName" type="text" class="validate" name="firstName"
+                         required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field">
+                  <i class="material-icons">short_text</i>last name<span class="blue-text"> *</span>
+                  <input [(ngModel)]="lastName" id="register-lastName" type="text" class="validate" name="lastName"
+                         required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field">
+                  <i class="material-icons">lock_outline</i> password<span class="blue-text"> *</span>
+                  <input [(ngModel)]="password" id="register-password" type="password" class="validate" name="password"
+                         required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field">
+                  <i class="material-icons">lock</i> confirm password<span class="blue-text"> *</span>
+                  <input [(ngModel)]="passwordConfirm" id="register-password-confirm" type="password" class="validate"
+                         name="password-confirm" required>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m12 l4 offset-l1">
+              <div class="row">
+                <div class="input-field">
+                  <i class="material-icons">portrait</i> profile picture url<span class="blue-text"> *</span>
+                  <input type="url" [(ngModel)]="profilePictureUrl" class="validate"
+                         name="profilePictureUrl">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="center">
+                  <img [src]="profilePictureUrl || defaultProfilePicUrl" alt="Profile picture preview / invalid url."
+                       class="circle grey-border small" style="width: 70%">
+                </div>
+              </div>
+              <div class="row">
+                <div class="center">
+                  {{firstName}} {{lastName}} <b *ngIf="username"> (@{{username}}) </b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='row'>
+            <button type='submit' name='btn_login'
+                    class='col s12 m6 offset-m2 l4 offset-l4 waves-effect waves-light btn-large'>
+              register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="center">
+      Already registered? <a [routerLink]="['/login']">login now</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 l6 offset-m2 offset-l3">
+
+
+      </div>
+    </div>
+  </div>
+</div>

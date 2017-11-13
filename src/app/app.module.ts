@@ -8,6 +8,15 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { ToastService } from './services/toast.service';
+import { AuthService } from './services/auth.service';
+import { AuthHelperService } from './services/auth-helper.service';
+import { ApiService } from './services/api.service';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { ValidateService } from './services/validate.service';
 
 @NgModule({
   declarations: [
@@ -15,14 +24,24 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     MaterializeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    AuthHelperService,
+    AuthService,
+    ToastService,
+    ValidateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

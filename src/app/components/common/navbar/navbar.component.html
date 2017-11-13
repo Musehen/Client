@@ -1,4 +1,4 @@
-<nav class="nav-extended" style="background-color: #d32f2f">
+<nav class="nav-extended ">
   <div class="nav-wrapper">
     <a materialize="sideNav" [materializeParams]="[{closeOnClick: true, draggable: true}]"
        data-activates="mobile" class="button-collapse">
@@ -14,14 +14,34 @@
         <img src="/assets/painting.svg" class="svg"></a></li>
     </ul>
     <ul class="right hide-on-med-and-down">
-      <li><a href="">Login</a></li>
-      <li><a href="">Register</a></li>
+      <li *ngIf="!authHelperService.isLoggedIn()" [routerLinkActive]="['active']">
+        <a [routerLink]="['/login']">Login</a>
+      </li>
+      <li *ngIf="!authHelperService.isLoggedIn()" [routerLinkActive]="['active']">
+        <a [routerLink]="['/register']">Register</a>
+      </li>
+      <li *ngIf="authHelperService.isLoggedIn()" [routerLinkActive]="['active']">
+        <a [routerLink]="['/profile/me']">{{username}}</a>
+      </li>
+      <li *ngIf="authHelperService.isLoggedIn()" (click)="onLogoutClick()">
+        <a>Logout</a>
+      </li>
     </ul>
     <ul class="side-nav" id="mobile">
       <li><a href="">About us</a></li>
       <li class="divider"></li>
-      <li><a href="">Login</a></li>
-      <li><a href="">Register</a></li>
+      <li *ngIf="!authHelperService.isLoggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="routerLinkOpts"><a
+        [routerLink]="['/login']">Login</a></li>
+      <li *ngIf="!authHelperService.isLoggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="routerLinkOpts"><a
+        [routerLink]="['/register']">Register</a></li>
+      <li *ngIf="authHelperService.isLoggedIn()" [routerLinkActive]="['active']"
+                                                                [routerLinkActiveOptions]="routerLinkOpts"><a
+      [routerLink]="['/profile/me']">{{username}}</a></li>
+      <li *ngIf="authHelperService.isLoggedIn()" (click)="onLogoutClick()">
+        <a>Logout</a>
+      </li>
     </ul>
     <ul class="tabs tabs-transparent hide-on-large-only">
       <li class="tab"><a href="">All

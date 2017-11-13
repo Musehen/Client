@@ -1,0 +1,16 @@
+@import '~materialize-css/sass/components/color';
+
+$roboto-font-path: "~materialize-css/dist/fonts/roboto/";
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+  font-family: 'Montserrat';
+}
+
+
+$primary-color: color("red", "darken-1");
+$secondary-color: color("red", "base");
+
+@import "~materialize-css/sass/materialize";
+@import '~materialize-css/sass/components/variables';
