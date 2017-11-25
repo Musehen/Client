@@ -17,6 +17,8 @@ import { ApiService } from './services/api.service';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ValidateService } from './services/validate.service';
+import { MeComponent } from './components/pages/me/me.component';
+import { VenuesService } from './services/venues.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ValidateService } from './services/validate.service';
     HomeComponent,
     NotFoundComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { ValidateService } from './services/validate.service';
     AuthHelperService,
     AuthService,
     ToastService,
-    ValidateService
+    ValidateService,
+    VenuesService
   ],
   bootstrap: [AppComponent]
 })

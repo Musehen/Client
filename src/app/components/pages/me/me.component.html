@@ -1,0 +1,103 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col s12 m12 l3 offset-l1">
+            <div class="row">
+              <div class="center">
+                <img [src]="profilePicUrl" alt="Profile picture preview / invalid url."
+                     class="circle grey-border small" style="width: 70%">
+              </div>
+            </div>
+            <div class="row">
+              <div class="center">
+                {{fullName}} <b *ngIf="username"> (@{{username}}) </b>
+              </div>
+            </div>
+            <div class="row">
+              <h6>Reviews</h6>
+              <ul *ngIf="reviews && reviews.length>0" class="collection">
+                <li class="collection-item avatar">
+                  <img src="images/yuna.jpg" alt="" class="circle">
+                  <span class="title">Title</span>
+                  <p>First Line <br>
+                    Second Line
+                  </p>
+                  <a href="#!" class="secondary-content"><i class="material-icons">expand_more</i></a>
+                </li>
+              </ul>
+              <ul *ngIf="!reviews || reviews.length==0" class="collection">
+                <li class="collection-item">
+                  <span class="title">You have not added any reviews.</span>
+                  <p>
+                    Rate <a [routerLink]="['/all']">the venues</a> you have visited.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col s12 m8 l6">
+            <div class="row">
+              <h6>Your venues</h6>
+              <ul *ngIf="myVenues && myVenues.length>0" class="collection">
+                <li *ngFor="let venue of myVenues" class="collection-item avatar">
+                  <img [src]="venue.imageUrl" alt="" class="circle">
+                  <span class="title">
+              <a routerLink="/venues/{{venue._id}}"> {{venue.name}} </a>
+                   <div class="chip">
+                     {{venue.category}}
+                   </div>
+                  </span>
+
+                  <p>{{venue.about}} <br>
+                    @ {{venue.location.address}}
+                  </p>
+                  <a href="#!" class="secondary-content"><i class="material-icons">expand_more</i></a>
+                </li>
+                <li class="collection-item">
+                  <p>
+                    <a [routerLink]="['/all']">Add</a> another venue to the system.
+                  </p>
+                </li>
+              </ul>
+              <ul *ngIf="!myVenues || myVenues.length==0" class="collection">
+                <li class="collection-item">
+                  <span class="title">You have not created any venues.</span>
+                  <p>
+                    <a [routerLink]="['/all']">Add</a> your venue to the system.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <h6>Moderator of</h6>
+              <ul *ngIf="moderatingVenues && moderatingVenues.length>0" class="collection">
+                <li *ngFor="let venue of moderatingVenues" class="collection-item avatar">
+                  <img [src]="venue.imageUrl" alt="" class="circle">
+                  <span class="title">
+              <a routerLink="/venues/{{venue._id}}"> {{venue.name}} </a>
+                   <div class="chip">
+                     {{venue.category}}
+                   </div>
+                  </span>
+
+                  <p>{{venue.about}} <br>
+                    @ {{venue.location.address}}
+                  </p>
+                  <a href="#!" class="secondary-content"><i class="material-icons">expand_more</i></a>
+                </li>
+              </ul>
+              <ul *ngIf="!moderatingVenues || moderatingVenues.length==0" class="collection">
+                <li class="collection-item">
+                  <span class="title">You are not moderator of a venue.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

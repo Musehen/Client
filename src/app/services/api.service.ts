@@ -16,6 +16,7 @@ export class ApiService {
   }
 
   apiUrl = environment.apiUrl;
+  staticFilesUrl = environment.staticFilesUrl;
 
   get(path: string) {
     let headers = new Headers();

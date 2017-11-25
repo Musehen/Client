@@ -4,10 +4,9 @@ $roboto-font-path: "~materialize-css/dist/fonts/roboto/";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-* {
+:not(i) {
   font-family: 'Montserrat';
 }
-
 
 $primary-color: color("red", "darken-1");
 $secondary-color: color("red", "base");
